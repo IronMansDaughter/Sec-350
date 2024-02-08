@@ -1,0 +1,13 @@
+set interfaces ethernet eth0 address '172.16.150.3/24'
+set interfaces ethernet eth0 description 'LAN- 172.16.150.3/24'
+set interfaces ethernet eth1 address '172.16.200.2/28'
+set interfaces ethernet eth1 description 'MGMT- 172.16.200.2/28'
+set protocols rip interface eth0
+set protocols rip network '172.16.200.0/28'
+set protocols static route 0.0.0.0/0 next-hop 172.16.150.2
+set service dns forwarding allow-from '172.16.200.0/28'
+set service dns forwarding listen-address '172.16.200.2'
+set service dns forwarding system
+set service ssh listen-address '0.0.0.0'
+set system host-name 'fw-mgmt-janelle'
+set system name-server '172.16.150.2'
