@@ -53,7 +53,7 @@ dcheck (){
 	RED="\e[31m"
 	GREEN="\e[32m"
 	checkstatus=$(ip link show | grep wg0)
-	[ -n "$checkstatus" ] && printf "\n${GREEN}SUCCESS: Wireguard interface is up! \n" || printf "\n${RED}ERROR: Wireguard interface does not exist! \n"
+	[ -n "$checkstatus" ] && printf "\n${GREEN}SUCCESS: Wireguard interface is up and running! YAY you did it!!!!\n" || printf "\n${RED}ERROR: Wireguard interface does not exist! \n"
 }
 
 dcheck
